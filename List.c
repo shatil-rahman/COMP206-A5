@@ -12,24 +12,27 @@ void newList(){
 }
 
 int addNode(int value){
-	struct NODE *new;
-	new = (struct NODE *)malloc(sizeof(struct NODE));
+	struct NODE *temp;
+	temp = (struct NODE *)malloc(sizeof(struct NODE));
 
-	if(new == NULL) return FALSE;
+	if(temp == NULL) return FALSE;
 
-	new->data = value;
 	if(head == NULL){
-		head = new;
+		head = temp;
+		head->data = value;
 		return TRUE;
 	}
+
 	else{
-		new->next = head;
-		head = new;
+
+		temp->data = head->data;
+		temp->next = head->next;
+		
+		head->data = value;
+		head->next = temp;
+
 		return TRUE;
-
 	}
-
-
 
 }
 
@@ -37,7 +40,7 @@ void prettyPrint(){
 	struct NODE *temp = head;
 	while(temp!= NULL){
 		printf("%d,", temp->data);
-		temp = head->next;
+		temp = temp->next;
 	}
 	printf("\n");
 }
