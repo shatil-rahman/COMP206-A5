@@ -12,7 +12,8 @@ void newList(){
 }
 
 int addNode(int value){
-	struct NODE *new = (struct NODE *)malloc(sizeof(struct NODE));
+	struct NODE *new;
+	new = (struct NODE *)malloc(sizeof(struct NODE));
 
 	if(new == NULL) return FALSE;
 
