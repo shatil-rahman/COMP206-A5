@@ -1,7 +1,7 @@
 #ifndef NODEH
 #define NODEH
-	struct Node{
+	struct NODE{
 		int data;
-		struct NODE *name;
+		struct NODE *next;
 	};
 #endif
