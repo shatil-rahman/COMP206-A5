@@ -1,3 +1,6 @@
+//Name: Shatil Rahman
+//ID: 260606042
+
 #include <stdio.h>
 
 
@@ -18,7 +21,7 @@ int main(){
 		}
 
 		success = addNode(n);
-		if(!success){
+		if(!success){ 										//if memory allocation failed
 			printf("Node creation failed, exiting...\n");
 			return 0;
 		}
